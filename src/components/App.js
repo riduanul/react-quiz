@@ -8,14 +8,19 @@ import Quiz from "./Pages/Quiz";
 import Result from "./Pages/Result";
 import Signup from "./Pages/Signup";
 
+
 function App() {
   return (
       <AuthProvider>
         <Router>
         <Layout>
           <Switch>
-            
-            <Route exact path="/" >
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/quiz/:id" component={Quiz} />
+            <Route exact path="/result/:id" component={Result} />
+            {/* <Route exact path="/" >
               <Home />
             </Route>
             <Route  path="/signup" >
@@ -24,12 +29,12 @@ function App() {
             <Route  path="/login" >
               <Login />
             </Route>
-            <Route  path="/quiz" >
-              <Quiz />
-            </Route>
-            <Route  path="/result" >
-              <Result />
-            </Route>
+            <PrivateRoute path="/quiz">
+               <Quiz />
+            </PrivateRoute>
+            <PrivateRoute path="/result" >
+                <Result />
+            </PrivateRoute> */}
             
           </Switch>
         </Layout>
